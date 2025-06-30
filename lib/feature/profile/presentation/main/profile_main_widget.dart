@@ -13,7 +13,6 @@ class ProfileMainWidget extends StatefulWidget {
 class _ProfileMainWidgetState extends StateWithCubit<ProfileMainCubit, ProfileMainWidget> {
   @override
   Widget build(BuildContext context) {
-    final styles = AppStyle(context);
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: context.themeBgColor,
@@ -28,7 +27,7 @@ class _ProfileMainWidgetState extends StateWithCubit<ProfileMainCubit, ProfileMa
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   UiIcon(UiAssets.profileAvatar40, width: 40, height: 40),
-                  Expanded(child: Text('Журавлёва Виктория', style: styles.textBaseMedium)),
+                  Expanded(child: Text('Журавлёва Виктория', style: context.textBaseMedium())),
                   UiIconButton(assetPath: UiAssets.notification24, onPressed: () {}),
                 ],
               ),
@@ -54,9 +53,9 @@ class _ProfileMainWidgetState extends StateWithCubit<ProfileMainCubit, ProfileMa
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Скидка', style: styles.text2xlMediumManrope.copyWith(color: UiColors.accent)),
+                                Text('Скидка', style: context.text2xlMediumManrope().copyWith(color: UiColors.accent)),
                                 Gap(12),
-                                Text('5%', style: styles.text2xlMediumManrope.copyWith(color: UiColors.accent)),
+                                Text('5%', style: context.text2xlMediumManrope().copyWith(color: UiColors.accent)),
                                 Spacer(),
                                 UiIcon(UiAssets.info24, width: 24, height: 24),
                               ],
@@ -68,8 +67,8 @@ class _ProfileMainWidgetState extends StateWithCubit<ProfileMainCubit, ProfileMa
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Бонусы', style: styles.textSmMedium.copyWith(color: UiColors.accent)),
-                                    Text('157', style: styles.textXlSemiBold.copyWith(color: UiColors.accent)),
+                                    Text('Бонусы', style: context.textSmMedium().copyWith(color: UiColors.accent)),
+                                    Text('157', style: context.textXlSemiBold().copyWith(color: UiColors.accent)),
                                   ],
                                 ),
                                 Spacer(),

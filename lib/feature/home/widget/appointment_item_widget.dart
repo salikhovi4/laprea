@@ -10,7 +10,6 @@ class AppointmentItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final styles = AppStyle(context);
     return SizedBox(
       width: 320,
       child: DecoratedBox(
@@ -28,8 +27,8 @@ class AppointmentItemWidget extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(model.title, style: styles.textBaseBold),
-                      Text(model.time, style: styles.textBaseMedium),
+                      Text(model.title, style: context.textBaseBold()),
+                      Text(model.time, style: context.textBaseMedium()),
                     ],
                   ),
                   DecoratedBox(
@@ -39,7 +38,7 @@ class AppointmentItemWidget extends StatelessWidget {
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-                      child: Text(model.status, style: styles.textXsMedium.copyWith(color: UiColors.accent)),
+                      child: Text(model.status, style: context.textXsMedium().copyWith(color: UiColors.accent)),
                     ),
                   ),
                 ],
@@ -60,8 +59,8 @@ class AppointmentItemWidget extends StatelessWidget {
                           spacing: 2,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(model.desc, style: styles.textSmMedium),
-                            Text(model.price, style: styles.textBaseMedium),
+                            Text(model.desc, style: context.textSmMedium()),
+                            Text(model.price, style: context.textBaseMedium()),
                           ],
                         ),
                       ),

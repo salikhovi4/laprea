@@ -13,7 +13,7 @@ class FavorChipWidget extends StatelessWidget {
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), border: Border.all(color: UiColors.primary)),
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 6, horizontal: 16),
-        child: Text(label, style: AppStyle(context).textSmMedium),
+        child: Text(label, style: context.textSmMedium()),
       ),
     );
   }

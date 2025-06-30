@@ -10,7 +10,6 @@ class NewsCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final styles = AppStyle(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
@@ -23,15 +22,15 @@ class NewsCardWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(model.title, style: styles.textBaseMedium),
+                  Text(model.title, style: context.textBaseMedium()),
                   Gap(4),
-                  Text(model.desc, style: styles.textSmMedium, maxLines: 2, overflow: TextOverflow.ellipsis),
+                  Text(model.desc, style: context.textSmMedium(), maxLines: 2, overflow: TextOverflow.ellipsis),
                   Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(model.time, style: styles.textXsMedium),
+                      Text(model.time, style: context.textXsMedium()),
                       UiIcon(UiAssets.play24),
                     ],
                   ),

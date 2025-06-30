@@ -64,7 +64,6 @@ class _BottomNavigationBarState extends State<BottomBar> {
 
   @override
   Widget build(BuildContext context) {
-    final textStyles = AppStyle(context);
     return AutoTabsScaffold(
       backgroundColor: context.themeBgColor,
       routes: _bottomBarRoutes,
@@ -81,8 +80,8 @@ class _BottomNavigationBarState extends State<BottomBar> {
               backgroundColor: context.themeBgColor,
               selectedItemColor: UiColors.accent,
               unselectedItemColor: UiColors.accent,
-              selectedLabelStyle: textStyles.textXsMedium.copyWith(color: UiColors.accent),
-              unselectedLabelStyle: textStyles.textXsMedium.copyWith(color: UiColors.accent),
+              selectedLabelStyle: context.textXsMedium().copyWith(color: UiColors.accent),
+              unselectedLabelStyle: context.textXsMedium().copyWith(color: UiColors.accent),
               items: _bottomBarMenuItems.map((el) => _buildBottomBarItem(el)).toList(),
               onTap: (index) => _onBottomBarIconPressed(index),
             );

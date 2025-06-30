@@ -39,7 +39,7 @@ class UiAppBar extends StatelessWidget implements PreferredSizeWidget {
             child:
                 child ??
                 (title != null
-                    ? Text(title ?? '', style: AppStyle(context).text2xlMedium.copyWith(color: titleColor))
+                    ? Text(title ?? '', style: context.text2xlMedium().copyWith(color: titleColor))
                     : const SizedBox.shrink()),
           ),
           ...actions,

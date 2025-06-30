@@ -119,7 +119,6 @@ class _HomeMainWidgetState extends State<HomeMainWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final styles = AppStyle(context);
     return Scaffold(
       backgroundColor: context.themeBgColor,
       body: SafeArea(
@@ -147,7 +146,7 @@ class _HomeMainWidgetState extends State<HomeMainWidget> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Мои посещения', style: styles.text2xlMedium),
+                    Text('Мои посещения', style: context.text2xlMedium()),
                     SizedBox(width: 48, height: 48, child: Center(child: UiIcon(UiAssets.arrowRight24))),
                   ],
                 ),
@@ -171,7 +170,7 @@ class _HomeMainWidgetState extends State<HomeMainWidget> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Услуги', style: styles.text2xlMedium),
+                    Text('Услуги', style: context.text2xlMedium()),
                     SizedBox(width: 48, height: 48, child: Center(child: UiIcon(UiAssets.arrowRight24))),
                   ],
                 ),
@@ -207,7 +206,7 @@ class _HomeMainWidgetState extends State<HomeMainWidget> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Специалисты', style: styles.text2xlMedium),
+                    Text('Специалисты', style: context.text2xlMedium()),
                     SizedBox(width: 48, height: 48, child: Center(child: UiIcon(UiAssets.arrowRight24))),
                   ],
                 ),
@@ -216,7 +215,7 @@ class _HomeMainWidgetState extends State<HomeMainWidget> {
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: Text(
                   'Наши мастера в Laprea бережно преобразят ваше тело, даря минуты расслабления и уверенности.',
-                  style: styles.textSmMedium,
+                  style: context.textSmMedium(),
                 ),
               ),
               Gap(16),
@@ -239,7 +238,7 @@ class _HomeMainWidgetState extends State<HomeMainWidget> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Новости', style: styles.text2xlMedium),
+                    Text('Новости', style: context.text2xlMedium()),
                     SizedBox(width: 48, height: 48, child: Center(child: UiIcon(UiAssets.arrowRight24))),
                   ],
                 ),

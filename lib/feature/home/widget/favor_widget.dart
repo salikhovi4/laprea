@@ -18,7 +18,7 @@ class FavorWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           child: Image.asset(model.imageUrl, fit: BoxFit.cover, width: 140, height: 140),
         ),
-        Text(model.title, style: AppStyle(context).textSmMedium),
+        Text(model.title, style: context.textSmMedium()),
       ],
     );
   }

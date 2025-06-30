@@ -10,14 +10,13 @@ class SpecialistCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final styles = AppStyle(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image.asset(model.imageUrl, height: 120, fit: BoxFit.contain),
         Gap(4),
-        Text(model.name, style: styles.textSmMedium),
-        Text(model.major, style: styles.textXsMedium.copyWith(color: UiColors.secondary)),
+        Text(model.name, style: context.textSmMedium()),
+        Text(model.major, style: context.textXsMedium().copyWith(color: UiColors.secondary)),
       ],
     );
   }
