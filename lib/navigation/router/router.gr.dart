@@ -11,12 +11,12 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i8;
 import 'package:laprea/feature/appointment/di/appointment_views.dart' as _i1;
-import 'package:laprea/feature/certificates/di/certificates_views.dart' as _i3;
-import 'package:laprea/feature/favors/di/favors_views.dart' as _i5;
-import 'package:laprea/feature/home/di/home_views.dart' as _i6;
+import 'package:laprea/feature/favors/di/favors_views.dart' as _i4;
+import 'package:laprea/feature/home/di/home_views.dart' as _i5;
+import 'package:laprea/feature/profile/di/profile_views.dart' as _i6;
 import 'package:laprea/feature/splash/di/splash_views.dart' as _i7;
 import 'package:laprea/navigation/bottom_bar/bottom_bar.dart' as _i2;
-import 'package:laprea/navigation/router/empty_router.dart' as _i4;
+import 'package:laprea/navigation/router/empty_router.dart' as _i3;
 
 /// generated route for
 /// [_i1.AppointmentMainScreen]
@@ -67,39 +67,7 @@ class BottomBar extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.CertificatesMainScreen]
-class CertificatesMainRoute extends _i8.PageRouteInfo<void> {
-  const CertificatesMainRoute({List<_i8.PageRouteInfo>? children})
-    : super(CertificatesMainRoute.name, initialChildren: children);
-
-  static const String name = 'CertificatesMainRoute';
-
-  static _i8.PageInfo page = _i8.PageInfo(
-    name,
-    builder: (data) {
-      return const _i3.CertificatesMainScreen();
-    },
-  );
-}
-
-/// generated route for
-/// [_i3.CertificatesRoute]
-class CertificatesRouteRoot extends _i8.PageRouteInfo<void> {
-  const CertificatesRouteRoot({List<_i8.PageRouteInfo>? children})
-    : super(CertificatesRouteRoot.name, initialChildren: children);
-
-  static const String name = 'CertificatesRouteRoot';
-
-  static _i8.PageInfo page = _i8.PageInfo(
-    name,
-    builder: (data) {
-      return const _i3.CertificatesRoute();
-    },
-  );
-}
-
-/// generated route for
-/// [_i4.EmptyRouter]
+/// [_i3.EmptyRouter]
 class EmptyRoute extends _i8.PageRouteInfo<void> {
   const EmptyRoute({List<_i8.PageRouteInfo>? children})
     : super(EmptyRoute.name, initialChildren: children);
@@ -109,13 +77,13 @@ class EmptyRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i4.EmptyRouter();
+      return const _i3.EmptyRouter();
     },
   );
 }
 
 /// generated route for
-/// [_i5.FavorsMainScreen]
+/// [_i4.FavorsMainScreen]
 class FavorsMainRoute extends _i8.PageRouteInfo<void> {
   const FavorsMainRoute({List<_i8.PageRouteInfo>? children})
     : super(FavorsMainRoute.name, initialChildren: children);
@@ -125,13 +93,13 @@ class FavorsMainRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i5.FavorsMainScreen();
+      return const _i4.FavorsMainScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i5.FavorsRoute]
+/// [_i4.FavorsRoute]
 class FavorsRouteRoot extends _i8.PageRouteInfo<void> {
   const FavorsRouteRoot({List<_i8.PageRouteInfo>? children})
     : super(FavorsRouteRoot.name, initialChildren: children);
@@ -141,13 +109,13 @@ class FavorsRouteRoot extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i5.FavorsRoute();
+      return const _i4.FavorsRoute();
     },
   );
 }
 
 /// generated route for
-/// [_i6.HomeMainScreen]
+/// [_i5.HomeMainScreen]
 class HomeMainRoute extends _i8.PageRouteInfo<void> {
   const HomeMainRoute({List<_i8.PageRouteInfo>? children})
     : super(HomeMainRoute.name, initialChildren: children);
@@ -157,13 +125,13 @@ class HomeMainRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i6.HomeMainScreen();
+      return const _i5.HomeMainScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i6.HomeRoute]
+/// [_i5.HomeRoute]
 class HomeRouteRoot extends _i8.PageRouteInfo<void> {
   const HomeRouteRoot({List<_i8.PageRouteInfo>? children})
     : super(HomeRouteRoot.name, initialChildren: children);
@@ -173,7 +141,39 @@ class HomeRouteRoot extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i6.HomeRoute();
+      return const _i5.HomeRoute();
+    },
+  );
+}
+
+/// generated route for
+/// [_i6.ProfileMainScreen]
+class ProfileMainRoute extends _i8.PageRouteInfo<void> {
+  const ProfileMainRoute({List<_i8.PageRouteInfo>? children})
+    : super(ProfileMainRoute.name, initialChildren: children);
+
+  static const String name = 'ProfileMainRoute';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i6.ProfileMainScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [_i6.ProfileRoute]
+class ProfileRouteRoot extends _i8.PageRouteInfo<void> {
+  const ProfileRouteRoot({List<_i8.PageRouteInfo>? children})
+    : super(ProfileRouteRoot.name, initialChildren: children);
+
+  static const String name = 'ProfileRouteRoot';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i6.ProfileRoute();
     },
   );
 }

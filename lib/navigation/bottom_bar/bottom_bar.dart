@@ -5,7 +5,7 @@ import 'package:laprea/navigation/router/router.gr.dart';
 import 'package:laprea/ui_kit/theme/app_style.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
 
-const _bottomBarRoutes = [HomeRouteRoot(), FavorsRouteRoot(), AppointmentRouteRoot(), CertificatesRouteRoot()];
+const _bottomBarRoutes = [HomeRouteRoot(), FavorsRouteRoot(), AppointmentRouteRoot(), ProfileRouteRoot()];
 
 final _bottomBarMenuItems = <BottomBarItemModel>[
   BottomBarItemModel(label: 'Главная', assetPath: UiAssets.home24),

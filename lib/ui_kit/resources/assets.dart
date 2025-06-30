@@ -2,6 +2,12 @@ class UiAssets {
   static const String logo = 'assets/icons/laprea_logo.svg';
   static const String arrowRight24 = 'assets/icons/arrow_right24.svg';
   static const String play24 = 'assets/icons/play24.svg';
+  static const String arrowLeft24 = 'assets/icons/arrow_left24.svg';
+  static const String notification24 = 'assets/icons/notification24.svg';
+  static const String profileAvatar40 = 'assets/icons/profile_avatar40.svg';
+  static const String profileLogo = 'assets/icons/profile_logo.svg';
+  static const String info24 = 'assets/icons/info24.svg';
+  static const String qr24 = 'assets/icons/qr24.svg';
 
   /// bottom bar
   static const String account24 = 'assets/icons/bottom_bar/account24.svg';

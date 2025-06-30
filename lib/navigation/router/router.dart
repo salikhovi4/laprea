@@ -61,13 +61,13 @@ class AppRouter extends RootStackRouter {
               ],
             ),
             CustomRoute(
-              page: CertificatesRouteRoot.page,
+              page: ProfileRouteRoot.page,
               durationInMilliseconds: 300,
               transitionsBuilder: TransitionsBuilders.fadeIn,
               children: [
                 CustomRoute(
                   initial: true,
-                  page: CertificatesMainRoute.page,
+                  page: ProfileMainRoute.page,
                   durationInMilliseconds: 300,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
                 ),
