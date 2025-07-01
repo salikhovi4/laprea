@@ -34,6 +34,14 @@ extension AppStyle on BuildContext{
     fontFamily: 'Manrope',
   );
 
+  TextStyle textM3TitleLargeEmphasizeMedium() => TextStyle(
+    fontSize: 22,
+    height: 28 / 22,
+    fontWeight: FontWeight.w500,
+    color: themePrimaryColor,
+    fontFamily: 'Manrope',
+  );
+
   TextStyle textXlMedium() => TextStyle(
     fontSize: 20,
     height: 28 / 20,
@@ -82,6 +90,14 @@ extension AppStyle on BuildContext{
     fontFamily: 'Manrope',
   );
 
+  TextStyle textBaseRegular() => TextStyle(
+    fontSize: 16,
+    height: 24 / 16,
+    fontWeight: FontWeight.w400,
+    color: themePrimaryColor,
+    fontFamily: 'Manrope',
+  );
+
   TextStyle textBaseMedium() => TextStyle(
     fontSize: 16,
     height: 24 / 16,
@@ -102,6 +118,14 @@ extension AppStyle on BuildContext{
     fontSize: 16,
     height: 24 / 16,
     fontWeight: FontWeight.w700,
+    color: themePrimaryColor,
+    fontFamily: 'Manrope',
+  );
+
+  TextStyle textSmRegular() => TextStyle(
+    fontSize: 14,
+    height: 20 / 14,
+    fontWeight: FontWeight.w400,
     color: themePrimaryColor,
     fontFamily: 'Manrope',
   );
@@ -130,6 +154,14 @@ extension AppStyle on BuildContext{
     fontFamily: 'Manrope',
   );
 
+  TextStyle textXsRegular() => TextStyle(
+    fontSize: 12,
+    height: 16 / 12,
+    fontWeight: FontWeight.w400,
+    color: themePrimaryColor,
+    fontFamily: 'Manrope',
+  );
+
   TextStyle textXsMedium() => TextStyle(
     fontSize: 12,
     height: 16 / 12,
@@ -142,6 +174,14 @@ extension AppStyle on BuildContext{
     fontSize: 12,
     height: 16 / 12,
     fontWeight: FontWeight.w600,
+    color: themePrimaryColor,
+    fontFamily: 'Manrope',
+  );
+
+  TextStyle textM3LabelSmallBold() => TextStyle(
+    fontSize: 11,
+    height: 16 / 11,
+    fontWeight: FontWeight.w500,
     color: themePrimaryColor,
     fontFamily: 'Manrope',
   );

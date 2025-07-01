@@ -1,0 +1,10 @@
+{
+    "appointment": "Запись",
+    "select": "Выбрать",
+    "select_favor": "Выбор услуги",
+    "select_specialist": "Выбор специалиста",
+    "select_date_time": "Выбор даты и времени",
+    "payment_method": "Способ оплаты",
+    "search": "Поиск",
+    "duration": "Длительность"
+}

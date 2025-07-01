@@ -33,7 +33,13 @@ extension UiButtonSizeExtension on UiButtonSize {
   // };
 }
 
-enum UiButtonType { primary, secondary, secondaryQuartz, primaryFullRounded, whiteFullRounded }
+enum UiButtonType {
+  primary,
+  secondary,
+  secondaryQuartz,
+  primaryFullRounded,
+  whiteFullRounded,
+}
 
 enum UiButtonState { enabled, disabled, loading }
 
@@ -154,33 +160,52 @@ class _UiButtonState extends State<UiButton> {
 
   @override
   Widget build(BuildContext context) {
-    // final textTheme = AppStyle(context);
-    final textColor = context.themePrimaryColor.withValues(alpha: state.isDisabled ? 0.4 : 1);
+    final textColor =
+        widget.textStyle?.color ??
+        context.themePrimaryColor.withValues(alpha: state.isDisabled ? 0.4 : 1);
     return ElevatedButton(
       onPressed: state.isLoading || state.isDisabled ? null : widget.onPressed,
       style: ElevatedButton.styleFrom(
         alignment: Alignment.center,
         fixedSize: Size.fromHeight(widget.size.height),
         padding:
-            widget.customPadding ?? EdgeInsets.symmetric(horizontal: _horizontalPaddings, vertical: _verticalPaddings),
+            widget.customPadding ??
+            EdgeInsets.symmetric(
+              horizontal: _horizontalPaddings,
+              vertical: _verticalPaddings,
+            ),
         shadowColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(_radius),
-          side: BorderSide(width: widget.type == UiButtonType.secondary ? 1 : 0, color: UiColors.accentSecondary),
+          side: BorderSide(
+            width: widget.type == UiButtonType.secondary ? 1 : 0,
+            color: UiColors.accentSecondary,
+          ),
         ),
         // textStyle: widget.textStyle ?? widget.size.getTextStyle(textTheme).copyWith(color: textColor),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        textStyle: widget.textStyle,
       ).copyWith(
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((widgetState) {
           if (widgetState.contains(WidgetState.pressed)) {
-            return _foregroundColor;
+            return widget.customBackgroundColor?.withValues(alpha: 0.6) ??
+                _foregroundColor;
           }
 
-          return (widget.customBackgroundColor ?? _backgroundColor).withValues(alpha: state.isDisabled ? 0.4 : 1);
+          return (widget.customBackgroundColor ?? _backgroundColor).withValues(
+            alpha: state.isDisabled ? 0.4 : 1,
+          );
         }),
-        foregroundColor: WidgetStateProperty.resolveWith<Color?>((_) => textColor),
+        foregroundColor: WidgetStateProperty.resolveWith<Color?>((state) {
+          if (state.contains(WidgetState.disabled)) {
+            return textColor.withValues(alpha: 0.4);
+          }
+          return textColor;
+        }),
         overlayColor: WidgetStateProperty.all<Color?>(Colors.transparent),
-        surfaceTintColor: WidgetStateProperty.resolveWith<Color?>((_) => Colors.transparent),
+        surfaceTintColor: WidgetStateProperty.resolveWith<Color?>(
+          (_) => Colors.transparent,
+        ),
       ),
       child: Row(
         mainAxisSize: widget.isFullWidth ? MainAxisSize.max : MainAxisSize.min,
@@ -190,7 +215,10 @@ class _UiButtonState extends State<UiButton> {
             SizedBox(
               width: widget.size.loaderSize,
               height: widget.size.loaderSize,
-              child: CircularProgressIndicator(color: context.themePrimaryColor, strokeWidth: 3),
+              child: CircularProgressIndicator(
+                color: context.themePrimaryColor,
+                strokeWidth: 3,
+              ),
             )
           else
             Text(widget.title),

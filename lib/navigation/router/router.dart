@@ -58,6 +58,10 @@ class AppRouter extends RootStackRouter {
                   durationInMilliseconds: 300,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
                 ),
+                AutoRoute(page: SelectFavorCategoryRoute.page),
+                AutoRoute(page: SelectFavorRoute.page),
+                AutoRoute(page: SelectSpecialistCategoryRoute.page),
+                AutoRoute(page: SelectSpecialistRoute.page),
               ],
             ),
             CustomRoute(

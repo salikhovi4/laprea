@@ -58,14 +58,13 @@ class UiIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildIcon();
+    Widget buildIcon() => SvgPicture.asset(
+      assetPath,
+      colorFilter: color != null ? ColorFilter.mode(color ?? Colors.black, BlendMode.srcIn) : null,
+      width: box ?? width ?? size.dimension,
+      height: box ?? height ?? size.dimension,
+      fit: fit,
+    );
+    return buildIcon();
   }
-
-  Widget _buildIcon() => SvgPicture.asset(
-    assetPath,
-    colorFilter: color != null ? ColorFilter.mode(color ?? Colors.black, BlendMode.srcIn) : null,
-    width: box ?? width ?? size.dimension,
-    height: box ?? height ?? size.dimension,
-    fit: fit,
-  );
 }

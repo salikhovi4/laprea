@@ -8,6 +8,8 @@ class UiAssets {
   static const String profileLogo = 'assets/icons/profile_logo.svg';
   static const String info24 = 'assets/icons/info24.svg';
   static const String qr24 = 'assets/icons/qr24.svg';
+  static const String search = 'assets/icons/search.svg';
+  static const String ratingStar = 'assets/icons/rating_star.svg';
 
   /// bottom bar
   static const String account24 = 'assets/icons/bottom_bar/account24.svg';
@@ -25,4 +27,5 @@ class UiAssets {
   static const String news1 = 'assets/images/temp/news1.png';
   static const String news2 = 'assets/images/temp/news2.png';
   static const String splashLogo = 'assets/images/splash_logo.png';
+  static const String favor4 = 'assets/images/temp/favor4.png';
 }

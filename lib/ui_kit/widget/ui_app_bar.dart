@@ -26,12 +26,18 @@ class UiAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: horizontalPaddings),
+      padding: EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: horizontalPaddings,
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           if (hasBackButton) ...[
-            HeaderIcon(context, iconBgColor: iconBgColor).buildBackButton(onPressed: onBackCallback),
+            HeaderIcon(
+              context,
+              iconBgColor: iconBgColor,
+            ).buildBackButton(onPressed: onBackCallback),
           ] else
             const SizedBox(width: 48, height: 48),
           Gap(4),
@@ -39,7 +45,14 @@ class UiAppBar extends StatelessWidget implements PreferredSizeWidget {
             child:
                 child ??
                 (title != null
-                    ? Text(title ?? '', style: context.text2xlMedium().copyWith(color: titleColor))
+                    ? Text(
+                      title ?? '',
+                      style: context.text2xlMedium().copyWith(
+                        color: titleColor,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    )
                     : const SizedBox.shrink()),
           ),
           ...actions,

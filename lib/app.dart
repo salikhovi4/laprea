@@ -2,7 +2,10 @@ import 'package:common/di/get_it.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/navigation/router/router.dart';
+import 'package:laprea/ui_kit/theme/theme.dart';
 import 'package:laprea/ui_kit/theme/theme_provider.dart';
 import 'package:laprea/utilites/log/l.dart';
 import 'package:talker_flutter/talker_flutter.dart';
@@ -19,18 +22,16 @@ class App extends StatelessWidget {
 
     final themeNotifier = context.watch<ThemeNotifier>();
     return MaterialApp.router(
-      theme: ThemeData(
-        fontFamily: 'Manrope',
-        brightness: Brightness.light,
-      ),
-      darkTheme: ThemeData(
-        fontFamily: 'Manrope',
-        brightness: Brightness.dark,
-      ),
+      theme: ThemeConfiguration.light,
+      darkTheme: ThemeConfiguration.dark,
       themeMode: themeNotifier.themeMode,
       locale: const Locale('ru'),
+      supportedLocales: const [Locale('en'), Locale('ru')],
       localizationsDelegates: const [
-        // AppLocalizations.delegate,
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
       builder: (context, child) {
         if (child != null) {
