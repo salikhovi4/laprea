@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Выбор даты и времени"),
         "select_favor": MessageLookupByLibrary.simpleMessage("Выбор услуги"),
         "select_specialist":
-            MessageLookupByLibrary.simpleMessage("Выбор специалиста")
+            MessageLookupByLibrary.simpleMessage("Выбор специалиста"),
+        "work_experience": MessageLookupByLibrary.simpleMessage("Стаж работы: ")
       };
 }

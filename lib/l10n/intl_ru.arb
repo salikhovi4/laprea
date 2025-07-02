@@ -6,5 +6,6 @@
     "select_date_time": "Выбор даты и времени",
     "payment_method": "Способ оплаты",
     "search": "Поиск",
-    "duration": "Длительность"
+    "duration": "Длительность",
+    "work_experience": "Стаж работы: "
 }

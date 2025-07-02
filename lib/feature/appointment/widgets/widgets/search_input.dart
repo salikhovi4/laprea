@@ -3,7 +3,9 @@ import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
 
 class SearchInput extends StatelessWidget {
-  const SearchInput({super.key});
+  const SearchInput({super.key, required this.onChanged});
+
+  final void Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +14,7 @@ class SearchInput extends StatelessWidget {
       child: SizedBox(
         height: 56,
         child: TextField(
+          onChanged: onChanged,
           decoration: InputDecoration(
             filled: true,
             contentPadding: EdgeInsets.only(left: 20, right: 20),

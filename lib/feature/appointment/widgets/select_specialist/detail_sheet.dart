@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:laprea/feature/appointment/presentation/select_specialist/select_specialist_page.dart';
+import 'package:laprea/feature/appointment/presentation/select_specialist_category/select_specialist_category_page.dart';
 import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
 
@@ -39,7 +39,7 @@ class DetailSheet extends StatelessWidget {
                     Gap(8),
                     RichText(
                       text: TextSpan(
-                        text: '${S.of(context).duration}: ',
+                        text: S.of(context).work_experience,
                         style: context.textSmRegular().copyWith(
                           color: UiColors.secondary,
                         ),

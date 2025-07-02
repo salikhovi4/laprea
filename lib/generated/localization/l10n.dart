@@ -129,6 +129,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Стаж работы: `
+  String get work_experience {
+    return Intl.message(
+      'Стаж работы: ',
+      name: 'work_experience',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
