@@ -71,6 +71,11 @@ class AppRouter extends RootStackRouter {
                   durationInMilliseconds: 300,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
                 ),
+                CustomRoute(
+                  page: ProfileVisitsRoute.page,
+                  durationInMilliseconds: 300,
+                  transitionsBuilder: TransitionsBuilders.fadeIn,
+                ),
               ],
             ),
           ],

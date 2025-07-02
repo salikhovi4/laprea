@@ -179,6 +179,22 @@ class ProfileRouteRoot extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [_i6.ProfileVisitsScreen]
+class ProfileVisitsRoute extends _i8.PageRouteInfo<void> {
+  const ProfileVisitsRoute({List<_i8.PageRouteInfo>? children})
+    : super(ProfileVisitsRoute.name, initialChildren: children);
+
+  static const String name = 'ProfileVisitsRoute';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i6.ProfileVisitsScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [_i7.SplashScreen]
 class SplashRoute extends _i8.PageRouteInfo<void> {
   const SplashRoute({List<_i8.PageRouteInfo>? children})

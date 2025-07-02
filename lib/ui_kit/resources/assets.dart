@@ -8,6 +8,8 @@ class UiAssets {
   static const String profileLogo = 'assets/icons/profile_logo.svg';
   static const String info24 = 'assets/icons/info24.svg';
   static const String qr24 = 'assets/icons/qr24.svg';
+  static const String arrowRightFilled24 = 'assets/icons/arrow_right_filled24.svg';
+  static const String logout24 = 'assets/icons/logout24.svg';
 
   /// bottom bar
   static const String account24 = 'assets/icons/bottom_bar/account24.svg';
