@@ -4,17 +4,30 @@ import 'package:laprea/ui_kit/ui_kit.dart';
 class UiIconButton extends StatelessWidget {
   final String assetPath;
   final VoidCallback onPressed;
+  final double? size;
 
-  const UiIconButton({super.key, required this.assetPath, required this.onPressed});
+  const UiIconButton({
+    super.key,
+    required this.assetPath,
+    required this.onPressed,
+    this.size,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWellNoSplash(
       onTap: onPressed,
       child: SizedBox(
-        width: 48,
+        width: size ?? 48,
         height: 48,
-        child: Center(child: UiIcon(assetPath, width: 24, height: 24, color: UiColors.primary)),
+        child: Center(
+          child: UiIcon(
+            assetPath,
+            width: 24,
+            height: 24,
+            color: UiColors.primary,
+          ),
+        ),
       ),
     );
   }

@@ -4,9 +4,10 @@ import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
 
 class DetailSheet extends StatelessWidget {
-  const DetailSheet({super.key, required this.data});
+  const DetailSheet({super.key, required this.data, required this.onSelect});
 
   final FavorData data;
+  final void Function() onSelect;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +18,12 @@ class DetailSheet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(data.name, style: context.textM3TitleLargeEmphasizeMedium()),
-          Gap(16),
+          const Gap(16),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
                 child: Image.asset(
                   data.image,
                   width: 110,
@@ -30,7 +31,7 @@ class DetailSheet extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Gap(16),
+              const Gap(16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,15 +50,15 @@ class DetailSheet extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Gap(8),
+                    const Gap(8),
                     Text(data.description, style: context.textSmRegular()),
-                    Gap(8),
+                    const Gap(8),
                     Row(
                       children: [
                         Container(
                           height: 24,
-                          padding: EdgeInsets.fromLTRB(8, 4, 8, 4),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
+                          decoration: const BoxDecoration(
                             color: UiColors.bonusCardColor,
                             borderRadius: BorderRadius.all(Radius.circular(12)),
                           ),
@@ -78,7 +79,7 @@ class DetailSheet extends StatelessWidget {
               ),
             ],
           ),
-          Gap(20),
+          const Gap(20),
           UiButton(
             title: S.of(context).select,
             size: UiButtonSize.large,
@@ -86,7 +87,10 @@ class DetailSheet extends StatelessWidget {
               color: UiColors.selectSheetTextButton,
             ),
             customPadding: EdgeInsets.zero,
-            onPressed: () {},
+            onPressed: () {
+              onSelect();
+              Navigator.of(context).pop();
+            },
           ),
         ],
       ),

@@ -16,13 +16,14 @@ class UiColors {
   static const Color orange = Color(0xFFCC661D);
   static const Color elevatedButtonBackgroundColor1 = Color(0xFFCED2AE);
   static const Color elevatedButtonTextColor1 = Color(0xFF3F412E);
-  static const Color inputHintTextColor = Color(0xFF8E8276);
+  static const Color hintTextColor = Color(0xFF8E8276);
   static const Color bonusCardColor = Color(0xFFDAE8F5);
   static const Color specialistRatingTextColor = Color(0xFF5D663E);
+  static const Color appointmentEditColor = Color(0xFF8E8276);
 }
 
 class ThemeConfiguration {
-  static final bottomSheetThemeLight = BottomSheetThemeData(
+  static final bottomSheetThemeLight = const BottomSheetThemeData(
     backgroundColor: UiColors.card,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(24)),
@@ -33,7 +34,7 @@ class ThemeConfiguration {
     fontFamily: 'Manrope',
     brightness: Brightness.light,
     scaffoldBackgroundColor: UiColors.surface,
-    inputDecorationTheme: InputDecorationTheme(fillColor: UiColors.inputFilled),
+    inputDecorationTheme: const InputDecorationTheme(fillColor: UiColors.inputFilled),
     bottomSheetTheme: bottomSheetThemeLight,
   );
 
@@ -41,7 +42,7 @@ class ThemeConfiguration {
     fontFamily: 'Manrope',
     brightness: Brightness.dark,
     scaffoldBackgroundColor: UiColors.surface,
-    inputDecorationTheme: InputDecorationTheme(fillColor: UiColors.inputFilled),
+    inputDecorationTheme: const InputDecorationTheme(fillColor: UiColors.inputFilled),
     bottomSheetTheme: bottomSheetThemeLight,
   );
 }

@@ -4,9 +4,10 @@ import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
 
 class DetailSheet extends StatelessWidget {
-  const DetailSheet({super.key, required this.data});
+  const DetailSheet({super.key, required this.data, required this.onSelect});
 
   final SpecialistData data;
+  final void Function() onSelect;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +18,12 @@ class DetailSheet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(data.name, style: context.textM3TitleLargeEmphasizeMedium()),
-          Gap(16),
+          const Gap(16),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
                 child: Image.asset(
                   data.image,
                   width: 110,
@@ -30,13 +31,13 @@ class DetailSheet extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Gap(16),
+              const Gap(16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(data.description, style: context.textSmRegular()),
-                    Gap(8),
+                    const Gap(8),
                     RichText(
                       text: TextSpan(
                         text: S.of(context).work_experience,
@@ -51,7 +52,7 @@ class DetailSheet extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Gap(8),
+                    const Gap(8),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -61,8 +62,8 @@ class DetailSheet extends StatelessWidget {
                             color: UiColors.specialistRatingTextColor,
                           ),
                         ),
-                        Gap(2),
-                        UiIcon(UiAssets.ratingStar, height: 14),
+                        const Gap(2),
+                        const UiIcon(UiAssets.ratingStar, height: 14),
                       ],
                     ),
                   ],
@@ -70,7 +71,7 @@ class DetailSheet extends StatelessWidget {
               ),
             ],
           ),
-          Gap(20),
+          const Gap(20),
           UiButton(
             title: S.of(context).select,
             size: UiButtonSize.large,
@@ -78,7 +79,10 @@ class DetailSheet extends StatelessWidget {
               color: UiColors.selectSheetTextButton,
             ),
             customPadding: EdgeInsets.zero,
-            onPressed: () {},
+            onPressed: () {
+              onSelect();
+              Navigator.of(context).pop();
+            },
           ),
         ],
       ),

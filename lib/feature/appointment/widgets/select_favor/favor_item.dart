@@ -1,4 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:laprea/feature/appointment/cubit/appointment_cubit.dart';
 import 'package:laprea/feature/appointment/presentation/select_favor_category/select_favor_category_page.dart';
 import 'package:laprea/feature/appointment/widgets/select_favor/detail_sheet.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
@@ -15,16 +18,22 @@ class FavorItem extends StatelessWidget {
         showModalBottomSheet<void>(
           useRootNavigator: true,
           context: context,
-          builder: (BuildContext context) {
-            return DetailSheet(data: item);
+          builder: (BuildContext _) {
+            return DetailSheet(
+              data: item,
+              onSelect: () {
+                context.read<AppointmentCubit>().favorSelected(item);
+                context.router.popUntilRoot();
+              },
+            );
           },
         );
       },
       child: Container(
         height: 80,
-        margin: EdgeInsets.only(bottom: 8),
+        margin: const EdgeInsets.only(bottom: 8),
         padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(12)),
           color: UiColors.card,
         ),
@@ -32,10 +41,10 @@ class FavorItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(8)),
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
               child: Image.asset(item.image, fit: BoxFit.contain),
             ),
-            Gap(16),
+            const Gap(16),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,15 +53,9 @@ class FavorItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        child: Text(
-                          item.name,
-                          style: context.textSmRegular(),
-                        ),
+                        child: Text(item.name, style: context.textSmRegular()),
                       ),
-                      Text(
-                        item.duration,
-                        style: context.textXsRegular(),
-                      ),
+                      Text(item.duration, style: context.textXsRegular()),
                     ],
                   ),
                   Text(
@@ -64,11 +67,11 @@ class FavorItem extends StatelessWidget {
                 ],
               ),
             ),
-            Gap(8),
+            const Gap(8),
             Text(item.price, style: context.textBaseMedium()),
           ],
         ),
       ),
-    );;
+    );
   }
 }

@@ -10,6 +10,8 @@ class UiAssets {
   static const String qr24 = 'assets/icons/qr24.svg';
   static const String search = 'assets/icons/search.svg';
   static const String ratingStar = 'assets/icons/rating_star.svg';
+  static const String close = 'assets/icons/close.svg';
+  static const String edit = 'assets/icons/edit.svg';
 
   /// bottom bar
   static const String account24 = 'assets/icons/bottom_bar/account24.svg';

@@ -20,7 +20,7 @@ class SearchInput extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20, right: 20),
             hintText: S.of(context).search,
             hintStyle: context.textBaseRegular().copyWith(
-              color: UiColors.inputHintTextColor,
+              color: UiColors.hintTextColor,
             ),
             suffixIcon: Padding(
               padding: const EdgeInsets.only(right: 8),
