@@ -59,7 +59,7 @@ class DetailSheet extends StatelessWidget {
                         Text(
                           data.rating,
                           style: context.textSmRegular().copyWith(
-                            color: UiColors.specialistRatingTextColor,
+                            color: UiColors.green1,
                           ),
                         ),
                         const Gap(2),

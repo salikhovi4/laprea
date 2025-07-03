@@ -86,7 +86,7 @@ class _SelectFavorCategoryPageState extends State<SelectFavorCategoryPage> {
 
   @override
   Widget build(BuildContext context) {
-    final EdgeInsetsGeometry padding = EdgeInsets.fromLTRB(16, 0, 16, 0);
+    final EdgeInsetsGeometry padding = const EdgeInsets.fromLTRB(16, 0, 16, 0);
     final searched = FavorRep().searchFavors(_query);
     return SafeArea(
       child: Scaffold(
@@ -124,8 +124,8 @@ class _SelectFavorCategoryPageState extends State<SelectFavorCategoryPage> {
                                 style: context.textBaseMedium(),
                               ),
                             ),
-                            Gap(16),
-                            Icon(Icons.arrow_right),
+                            const Gap(16),
+                            const Icon(Icons.arrow_right),
                           ],
                         ),
                       ),

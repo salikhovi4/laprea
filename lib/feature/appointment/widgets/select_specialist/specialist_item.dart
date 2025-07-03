@@ -58,7 +58,7 @@ class SpecialistItem extends StatelessWidget {
                       Text(
                         item.rating,
                         style: context.textXsRegular().copyWith(
-                          color: UiColors.specialistRatingTextColor,
+                          color: UiColors.green1,
                         ),
                       ),
                       const Gap(2),

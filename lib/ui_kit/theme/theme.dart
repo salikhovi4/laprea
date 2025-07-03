@@ -18,8 +18,9 @@ class UiColors {
   static const Color elevatedButtonTextColor1 = Color(0xFF3F412E);
   static const Color hintTextColor = Color(0xFF8E8276);
   static const Color bonusCardColor = Color(0xFFDAE8F5);
-  static const Color specialistRatingTextColor = Color(0xFF5D663E);
   static const Color appointmentEditColor = Color(0xFF8E8276);
+  static const Color green1 = Color(0xFF5D663E);
+  static const Color green2 = Color(0xFFD3D7B9);
 }
 
 class ThemeConfiguration {

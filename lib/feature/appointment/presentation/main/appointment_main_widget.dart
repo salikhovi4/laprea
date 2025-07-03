@@ -101,7 +101,11 @@ class AppointmentMainWidget extends StatelessWidget {
                 AppointmentItem(
                   trailText: '3.',
                   title: S.of(context).select_date_time,
-                  button: const SelectButton(),
+                  button: SelectButton(
+                    onPressed: () {
+                      context.pushRoute(const SelectDateRoute());
+                    },
+                  ),
                 ),
                 AppointmentItem(
                   trailText: '4.',

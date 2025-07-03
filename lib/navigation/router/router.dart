@@ -62,6 +62,7 @@ class AppRouter extends RootStackRouter {
                 AutoRoute(page: SelectFavorRoute.page),
                 AutoRoute(page: SelectSpecialistCategoryRoute.page),
                 AutoRoute(page: SelectSpecialistRoute.page),
+                AutoRoute(page: SelectDateRoute.page),
               ],
             ),
             CustomRoute(

@@ -12,6 +12,8 @@ class UiAssets {
   static const String ratingStar = 'assets/icons/rating_star.svg';
   static const String close = 'assets/icons/close.svg';
   static const String edit = 'assets/icons/edit.svg';
+  static const String arrowLeftCalendar = 'assets/icons/arrow_left_calendar.svg';
+  static const String arrowRightCalendar = 'assets/icons/arrow_right_calendar.svg';
 
   /// bottom bar
   static const String account24 = 'assets/icons/bottom_bar/account24.svg';

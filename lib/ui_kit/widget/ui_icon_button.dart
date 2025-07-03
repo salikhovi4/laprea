@@ -5,12 +5,14 @@ class UiIconButton extends StatelessWidget {
   final String assetPath;
   final VoidCallback onPressed;
   final double? size;
+  final double iconSize;
 
   const UiIconButton({
     super.key,
     required this.assetPath,
     required this.onPressed,
     this.size,
+    this.iconSize = 24,
   });
 
   @override
@@ -23,8 +25,8 @@ class UiIconButton extends StatelessWidget {
         child: Center(
           child: UiIcon(
             assetPath,
-            width: 24,
-            height: 24,
+            width: iconSize,
+            height: iconSize,
             color: UiColors.primary,
           ),
         ),
