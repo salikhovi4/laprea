@@ -1,7 +1,16 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:common/common_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:laprea/feature/profile/presentation/main/bloc/profile_main_cubit.dart';
+import 'package:laprea/navigation/router/router.gr.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
+
+class ProfileMenuItem {
+  final String title;
+  final VoidCallback onPressed;
+
+  ProfileMenuItem(this.title, this.onPressed);
+}
 
 class ProfileMainWidget extends StatefulWidget {
   const ProfileMainWidget({super.key});
@@ -11,6 +20,21 @@ class ProfileMainWidget extends StatefulWidget {
 }
 
 class _ProfileMainWidgetState extends StateWithCubit<ProfileMainCubit, ProfileMainWidget> {
+  late final List<ProfileMenuItem> _menuItems;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _menuItems = <ProfileMenuItem>[
+      ProfileMenuItem('Мои посещения', () => context.router.navigate(ProfileVisitsRoute())),
+      ProfileMenuItem('Избранное', () {}),
+      ProfileMenuItem('Сертификаты', () {}),
+      ProfileMenuItem('Настройка уведомлений', () {}),
+      ProfileMenuItem('О клинике', () {}),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -80,6 +104,42 @@ class _ProfileMainWidgetState extends StateWithCubit<ProfileMainCubit, ProfileMa
                       ),
                     ],
                   ),
+                ),
+              ),
+            ),
+            Gap(8),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children:
+                    _menuItems
+                        .map(
+                          (el) => InkWellNoSplash(
+                            onTap: el.onPressed,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 16),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Expanded(child: Text(el.title, style: context.textBaseMedium())),
+                                  UiIcon(UiAssets.arrowRightFilled24, box: 24),
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
+                        .toList(),
+              ),
+            ),
+            Spacer(),
+            InkWellNoSplash(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+                child: Row(
+                  children: [
+                    Expanded(child: Text('Выйти из профиля', style: context.textBaseMedium())),
+                    UiIcon(UiAssets.logout24, box: 24),
+                  ],
                 ),
               ),
             ),
