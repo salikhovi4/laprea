@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:laprea/feature/appointment/cubit/appointment_cubit.dart';
+import 'package:laprea/feature/appointment/presentation/main/cubit/appointment_cubit.dart';
 import 'package:laprea/feature/appointment/presentation/select_favor_category/select_favor_category_page.dart';
 import 'package:laprea/feature/appointment/widgets/select_favor/detail_sheet.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';

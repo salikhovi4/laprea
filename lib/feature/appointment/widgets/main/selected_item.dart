@@ -4,14 +4,14 @@ import 'package:laprea/ui_kit/ui_kit.dart';
 class SelectedItem extends StatelessWidget {
   const SelectedItem({
     super.key,
-    required this.image,
-    required this.name,
+    this.image,
+    required this.text,
     this.info,
     required this.onPressed,
   });
 
-  final String image;
-  final String name;
+  final String? image;
+  final String text;
   final Widget? info;
   final void Function() onPressed;
 
@@ -26,14 +26,15 @@ class SelectedItem extends StatelessWidget {
       ),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(8)),
-            child: Image.asset(image, width: 48, height: 48),
-          ),
-          const Gap(16),
+          if (image != null)
+            ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              child: Image.asset(image!, width: 48, height: 48),
+            ),
+          Gap(image != null ? 12 : 4),
           Expanded(
             child: Text(
-              name,
+              text,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: context.textBaseRegular(),

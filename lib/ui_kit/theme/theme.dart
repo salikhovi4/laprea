@@ -16,11 +16,11 @@ class UiColors {
   static const Color orange = Color(0xFFCC661D);
   static const Color elevatedButtonBackgroundColor1 = Color(0xFFCED2AE);
   static const Color elevatedButtonTextColor1 = Color(0xFF3F412E);
-  static const Color hintTextColor = Color(0xFF8E8276);
   static const Color bonusCardColor = Color(0xFFDAE8F5);
-  static const Color appointmentEditColor = Color(0xFF8E8276);
+  static const Color stoneGray = Color(0xFF8E8276);
   static const Color green1 = Color(0xFF5D663E);
   static const Color green2 = Color(0xFFD3D7B9);
+  static final Color shadow1 = Colors.black.withValues(alpha: 0.3);
 }
 
 class ThemeConfiguration {

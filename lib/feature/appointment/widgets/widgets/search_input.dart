@@ -17,13 +17,13 @@ class SearchInput extends StatelessWidget {
           onChanged: onChanged,
           decoration: InputDecoration(
             filled: true,
-            contentPadding: EdgeInsets.only(left: 20, right: 20),
+            contentPadding: const EdgeInsets.only(left: 20, right: 20),
             hintText: S.of(context).search,
             hintStyle: context.textBaseRegular().copyWith(
-              color: UiColors.hintTextColor,
+              color: UiColors.stoneGray,
             ),
-            suffixIcon: Padding(
-              padding: const EdgeInsets.only(right: 8),
+            suffixIcon: const Padding(
+              padding: EdgeInsets.only(right: 8),
               child: UiIcon(UiAssets.search, width: 24, height: 24),
             ),
             enabledBorder: OutlineInputBorder(

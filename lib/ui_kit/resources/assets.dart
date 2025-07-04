@@ -16,6 +16,7 @@ class UiAssets {
   static const String arrowRightCalendar = 'assets/icons/arrow_right_calendar.svg';
   static const String arrowRightFilled24 = 'assets/icons/arrow_right_filled24.svg';
   static const String logout24 = 'assets/icons/logout24.svg';
+  static const String checked = 'assets/icons/checked.svg';
 
   /// bottom bar
   static const String account24 = 'assets/icons/bottom_bar/account24.svg';

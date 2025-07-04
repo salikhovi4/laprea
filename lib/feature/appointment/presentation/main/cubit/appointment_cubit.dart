@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:intl/intl.dart';
 import 'package:laprea/feature/appointment/presentation/select_favor_category/select_favor_category_page.dart';
 import 'package:laprea/feature/appointment/presentation/select_specialist_category/select_specialist_category_page.dart';
 
@@ -19,4 +20,9 @@ class AppointmentCubit extends Cubit<AppointmentState> {
       emit(state.copyWith(selectedFavor: data));
 
   void clearSpecialist() => emit(state.copyWith(selectedSpecialist: null));
+
+  void dateTimeSelected(DateTime date) =>
+      emit(state.copyWith(selectedDateTime: date));
+
+  void clearDateTime() => emit(state.copyWith(selectedDateTime: null));
 }

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:laprea/feature/appointment/cubit/appointment_cubit.dart';
+import 'package:laprea/feature/appointment/presentation/main/cubit/appointment_cubit.dart';
 import 'package:laprea/feature/appointment/widgets/main/appointment_item.dart';
 import 'package:laprea/feature/appointment/widgets/main/edit_button.dart';
 import 'package:laprea/feature/appointment/widgets/main/select_button.dart';
@@ -15,6 +15,7 @@ class AppointmentMainWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = Localizations.localeOf(context).countryCode;
     return SafeArea(
       child: Scaffold(
         appBar: UiAppBar(
@@ -52,11 +53,11 @@ class AppointmentMainWidget extends StatelessWidget {
                     if (state.selectedFavor != null)
                       SelectedItem(
                         image: state.selectedFavor!.image,
-                        name: state.selectedFavor!.name,
+                        text: state.selectedFavor!.name,
                         info: Text(
                           state.selectedFavor!.duration,
                           style: context.textBaseRegular().copyWith(
-                            color: UiColors.hintTextColor,
+                            color: UiColors.stoneGray,
                           ),
                         ),
                         onPressed: context.read<AppointmentCubit>().clearFavor,
@@ -90,7 +91,7 @@ class AppointmentMainWidget extends StatelessWidget {
                     if (state.selectedSpecialist != null)
                       SelectedItem(
                         image: state.selectedSpecialist!.image,
-                        name: state.selectedSpecialist!.name,
+                        text: state.selectedSpecialist!.name,
                         onPressed:
                             context.read<AppointmentCubit>().clearSpecialist,
                       )
@@ -98,19 +99,41 @@ class AppointmentMainWidget extends StatelessWidget {
                       const Gap(24),
                   ],
                 ),
-                AppointmentItem(
-                  trailText: '3.',
-                  title: S.of(context).select_date_time,
-                  button: SelectButton(
-                    onPressed: () {
-                      context.pushRoute(const SelectDateRoute());
-                    },
-                  ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    AppointmentItem(
+                      trailText: '3.',
+                      title: S.of(context).select_date_time,
+                      button:
+                          state.selectedDateTime != null
+                              ? EditButton(
+                                onTap: () {
+                                  context.pushRoute(const SelectDateRoute());
+                                },
+                              )
+                              : SelectButton(
+                                onPressed: () {
+                                  context.pushRoute(const SelectDateRoute());
+                                },
+                              ),
+                    ),
+                    if (state.selectedDateTime != null)
+                      SelectedItem(
+                        text: state.dateTimeFormatted(locale),
+                        onPressed:
+                            context.read<AppointmentCubit>().clearDateTime,
+                      )
+                    else
+                      const Gap(24),
+                  ],
                 ),
                 AppointmentItem(
                   trailText: '4.',
                   title: S.of(context).payment_method,
-                  button: const SelectButton(),
+                  button: SelectButton(
+                    onPressed: state.enablePayment() ? () {} : null,
+                  ),
                 ),
               ],
             );

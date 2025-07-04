@@ -15,7 +15,7 @@ class EditButton extends StatelessWidget {
         width: 40,
         padding: const EdgeInsets.all(4),
         decoration: BoxDecoration(
-          border: Border.all(color: UiColors.appointmentEditColor),
+          border: Border.all(color: UiColors.stoneGray),
           borderRadius: const BorderRadius.all(Radius.circular(16)),
         ),
         child: const UiIcon(UiAssets.edit),

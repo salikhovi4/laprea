@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:laprea/feature/appointment/cubit/appointment_cubit.dart';
 import 'package:laprea/feature/appointment/presentation/main/appointment_main_widget.dart';
+import 'package:laprea/feature/appointment/presentation/main/cubit/appointment_cubit.dart';
 
 @RoutePage(name: 'AppointmentRouteRoot')
 class AppointmentRoute extends StatefulWidget {
