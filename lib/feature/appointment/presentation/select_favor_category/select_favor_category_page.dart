@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:laprea/feature/appointment/widgets/select_favor/favor_item.dart';
-import 'package:laprea/feature/appointment/widgets/widgets/search_input.dart';
+import 'package:laprea/ui_kit/widget/search_input.dart';
 import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/navigation/router/router.gr.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';

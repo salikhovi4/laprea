@@ -2,7 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:laprea/feature/appointment/presentation/select_specialist_category/select_specialist_category_page.dart';
 import 'package:laprea/feature/appointment/widgets/select_specialist/specialist_item.dart';
-import 'package:laprea/feature/appointment/widgets/widgets/search_input.dart';
+import 'package:laprea/ui_kit/widget/search_input.dart';
 import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
 

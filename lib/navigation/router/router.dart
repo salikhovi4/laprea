@@ -45,6 +45,7 @@ class AppRouter extends RootStackRouter {
                   transitionsBuilder: TransitionsBuilders.fadeIn,
                   initial: true,
                 ),
+                AutoRoute(page: FavorListRoute.page),
               ],
             ),
             CustomRoute(

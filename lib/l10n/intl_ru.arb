@@ -7,5 +7,7 @@
     "payment_method": "Способ оплаты",
     "search": "Поиск",
     "duration": "Длительность",
-    "work_experience": "Стаж работы: "
+    "work_experience": "Стаж работы: ",
+    "favor": "Услуги",
+    "sign_up_appointment": "Записаться"
 }

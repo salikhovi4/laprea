@@ -1,34 +1,34 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:laprea/feature/appointment/presentation/select_favor_category/select_favor_category_page.dart';
-import 'package:laprea/feature/appointment/widgets/select_favor/favor_item.dart';
-import 'package:laprea/ui_kit/widget/search_input.dart';
+import 'package:laprea/feature/favors/presentation/main/favors_main_widget.dart';
+import 'package:laprea/feature/favors/widgets/favor/favor_item.dart';
 import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
+import 'package:laprea/ui_kit/widget/search_input.dart';
 
 @RoutePage()
-class SelectFavorPage extends StatefulWidget {
-  const SelectFavorPage({super.key, required this.title});
+class FavorListPage extends StatefulWidget {
+  const FavorListPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<SelectFavorPage> createState() => _SelectFavorPageState();
+  State<FavorListPage> createState() => _FavorListPageState();
 }
 
-class _SelectFavorPageState extends State<SelectFavorPage> {
+class _FavorListPageState extends State<FavorListPage> {
   var _query = '';
 
   @override
   Widget build(BuildContext context) {
     final favors =
-        _query.isEmpty
-            ? FavorRep().fetchFavors()
-            : FavorRep().searchFavors(_query);
+    _query.isEmpty
+        ? FavorRep().fetchFavors()
+        : FavorRep().searchFavors(_query);
     return SafeArea(
       child: Scaffold(
         appBar: UiAppBar(
-          title: '${S.of(context).select_favor}(${widget.title})',
+          title: '${S.of(context).favor}(${widget.title})',
         ),
         body: CustomScrollView(
           slivers: [
