@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:laprea/feature/appointment/presentation/select_favor_category/select_favor_category_page.dart';
 import 'package:laprea/feature/favors/widgets/favor/favor_item.dart';
 import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/navigation/router/router.gr.dart';
@@ -10,24 +11,6 @@ class CategoryData {
   CategoryData({required this.title});
 
   final String title;
-}
-
-class FavorData {
-  FavorData({
-    required this.name,
-    required this.description,
-    required this.duration,
-    required this.price,
-    required this.bonus,
-    required this.image,
-  });
-
-  final String name;
-  final String duration;
-  final String price;
-  final String description;
-  final String bonus;
-  final String image;
 }
 
 class FavorRep {

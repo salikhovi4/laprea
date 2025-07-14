@@ -1,32 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:laprea/feature/appointment/presentation/main/appointment_main_widget.dart';
-import 'package:laprea/feature/appointment/presentation/main/cubit/appointment_cubit.dart';
 
 @RoutePage(name: 'AppointmentRouteRoot')
-class AppointmentRoute extends StatefulWidget {
+class AppointmentRoute extends StatelessWidget {
   const AppointmentRoute({super.key});
 
   @override
-  State<AppointmentRoute> createState() => _AppointmentRouteState();
-}
-
-class _AppointmentRouteState extends State<AppointmentRoute> {
-  final AppointmentCubit _appointmentCubit = AppointmentCubit();
-
-  @override
-  void dispose() {
-    _appointmentCubit.close();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => _appointmentCubit,
-      child: const AutoRouter(),
-    );
+    return const AutoRouter();
   }
 }
 

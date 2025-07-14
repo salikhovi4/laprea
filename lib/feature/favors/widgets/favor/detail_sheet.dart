@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:laprea/feature/appointment/presentation/select_favor_category/select_favor_category_page.dart';
 import 'package:laprea/feature/favors/presentation/main/favors_main_widget.dart';
 import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';

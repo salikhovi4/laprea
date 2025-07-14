@@ -18,6 +18,6 @@ class FavorsMainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FavorsMainWidget();
+    return const FavorsMainWidget();
   }
 }
