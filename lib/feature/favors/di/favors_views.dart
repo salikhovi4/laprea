@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:laprea/feature/favors/presentation/main/favors_main_widget.dart';
+import 'package:laprea/generated/localization/l10n.dart';
 
 @RoutePage(name: 'FavorsRouteRoot')
 class FavorsRoute extends StatelessWidget {
@@ -18,6 +19,6 @@ class FavorsMainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FavorsMainWidget();
+    return FavorsMainWidget(title: S.of(context).favor);
   }
 }

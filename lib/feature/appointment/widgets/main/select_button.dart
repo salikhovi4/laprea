@@ -13,7 +13,7 @@ class SelectButton extends StatelessWidget {
       title: S.of(context).select,
       size: UiButtonSize.small,
       state: onPressed == null ? UiButtonState.disabled : UiButtonState.enabled,
-      customPadding: EdgeInsets.fromLTRB(12, 0, 12, 0),
+      customPadding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
       customBackgroundColor: UiColors.elevatedButtonBackgroundColor1,
       textStyle: context.textSmMedium().copyWith(
         color: UiColors.elevatedButtonTextColor1,

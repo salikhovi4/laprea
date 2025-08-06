@@ -159,6 +159,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Повторить`
+  String get repeat {
+    return Intl.message(
+      'Повторить',
+      name: 'repeat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ошибка`
+  String get error {
+    return Intl.message(
+      'Ошибка',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

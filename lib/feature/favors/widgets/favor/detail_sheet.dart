@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:laprea/feature/appointment/presentation/select_favor_category/select_favor_category_page.dart';
-import 'package:laprea/feature/favors/presentation/main/favors_main_widget.dart';
+import 'package:laprea/feature/favors/data/models/service_data.dart';
 import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
 
 class DetailSheet extends StatelessWidget {
   const DetailSheet({super.key, required this.data, required this.onSelect});
 
-  final FavorData data;
+  final ServiceData data;
   final void Function() onSelect;
 
   @override
@@ -18,21 +17,21 @@ class DetailSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(data.name, style: context.textM3TitleLargeEmphasizeMedium()),
+          Text(data.serviceName, style: context.textM3TitleLargeEmphasizeMedium()),
           const Gap(16),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(8)),
-                child: Image.asset(
-                  data.image,
-                  width: 110,
-                  height: 110,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              const Gap(16),
+              // ClipRRect(
+              //   borderRadius: const BorderRadius.all(Radius.circular(8)),
+              //   child: Image.asset(
+              //     data.image,
+              //     width: 110,
+              //     height: 110,
+              //     fit: BoxFit.cover,
+              //   ),
+              // ),
+              // const Gap(16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,32 +44,32 @@ class DetailSheet extends StatelessWidget {
                         ),
                         children: <TextSpan>[
                           TextSpan(
-                            text: data.duration,
+                            text: data.durationStr(),
                             style: context.textSmRegular(),
                           ),
                         ],
                       ),
                     ),
                     const Gap(8),
-                    Text(data.description, style: context.textSmRegular()),
-                    const Gap(8),
+                    // Text(data.description, style: context.textSmRegular()),
+                    // const Gap(8),
                     Row(
                       children: [
-                        Container(
-                          height: 24,
-                          padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
-                          decoration: const BoxDecoration(
-                            color: UiColors.bonusCardColor,
-                            borderRadius: BorderRadius.all(Radius.circular(12)),
-                          ),
-                          child: Text(
-                            data.bonus,
-                            style: context.textM3LabelSmallBold(),
-                          ),
-                        ),
+                        // Container(
+                        //   height: 24,
+                        //   padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
+                        //   decoration: const BoxDecoration(
+                        //     color: UiColors.bonusCardColor,
+                        //     borderRadius: BorderRadius.all(Radius.circular(12)),
+                        //   ),
+                        //   child: Text(
+                        //     data.bonus,
+                        //     style: context.textM3LabelSmallBold(),
+                        //   ),
+                        // ),
                         const Spacer(),
                         Text(
-                          data.price,
+                          data.priceStr(),
                           style: context.textM3TitleLargeEmphasizeMedium(),
                         ),
                       ],

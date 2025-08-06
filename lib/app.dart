@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:laprea/dio/dio_client.dart';
 import 'package:laprea/feature/appointment/presentation/main/cubit/appointment_cubit.dart';
+import 'package:laprea/feature/favors/data/favors_api.dart';
+import 'package:laprea/feature/favors/data/favors_rep.dart';
+import 'package:laprea/feature/favors/presentation/cubit/favors_cubit.dart';
 import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/navigation/router/router.dart';
 import 'package:laprea/ui_kit/theme/theme.dart';
@@ -20,6 +24,8 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   final AppointmentCubit _appointmentCubit = AppointmentCubit();
+  final FavorsRep _favorsRep = FavorsRep(FavorsApi(DioClient()));
+  late final FavorsCubit _favorsCubit = FavorsCubit(_favorsRep);
 
   @override
   void initState() {
@@ -33,41 +39,52 @@ class _AppState extends State<App> {
   @override
   void dispose() {
     _appointmentCubit.close();
+    _favorsCubit.close();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final themeNotifier = context.watch<ThemeNotifier>();
-    return BlocProvider(
-      create: (context) => _appointmentCubit,
-      child: MaterialApp.router(
-        theme: ThemeConfiguration.light,
-        darkTheme: ThemeConfiguration.dark,
-        themeMode: themeNotifier.themeMode,
-        locale: const Locale('ru'),
-        supportedLocales: const [Locale('en'), Locale('ru')],
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
+    return RepositoryProvider(
+      create: (context) => _favorsRep,
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => _appointmentCubit,
+          ),
+          BlocProvider(
+            create: (context) => _favorsCubit,
+          ),
         ],
-        builder: (context, child) {
-          if (child != null) {
-            return MediaQuery(
-              data: MediaQuery.of(
-                context,
-              ).copyWith(textScaler: TextScaler.noScaling),
-              child: child,
-            );
-          }
+        child: MaterialApp.router(
+          theme: ThemeConfiguration.light,
+          darkTheme: ThemeConfiguration.dark,
+          themeMode: themeNotifier.themeMode,
+          locale: const Locale('ru'),
+          supportedLocales: const [Locale('en'), Locale('ru')],
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          builder: (context, child) {
+            if (child != null) {
+              return MediaQuery(
+                data: MediaQuery.of(
+                  context,
+                ).copyWith(textScaler: TextScaler.noScaling),
+                child: child,
+              );
+            }
 
-          return const SizedBox.shrink();
-        },
-        debugShowCheckedModeBanner: false,
-        routerConfig: getIt<AppRouter>().config(
-          navigatorObservers: () => [TalkerRouteObserver(L.talker)],
+            return const SizedBox.shrink();
+          },
+          debugShowCheckedModeBanner: false,
+          routerConfig: getIt<AppRouter>().config(
+            navigatorObservers: () => [TalkerRouteObserver(L.talker)],
+          ),
         ),
       ),
     );

@@ -24,8 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appointment": MessageLookupByLibrary.simpleMessage("Запись"),
         "duration": MessageLookupByLibrary.simpleMessage("Длительность"),
+        "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "favor": MessageLookupByLibrary.simpleMessage("Услуги"),
         "payment_method": MessageLookupByLibrary.simpleMessage("Способ оплаты"),
+        "repeat": MessageLookupByLibrary.simpleMessage("Повторить"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "select": MessageLookupByLibrary.simpleMessage("Выбрать"),
         "select_date_time":

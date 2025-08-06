@@ -9,5 +9,7 @@
     "duration": "Длительность",
     "work_experience": "Стаж работы: ",
     "favor": "Услуги",
-    "sign_up_appointment": "Записаться"
+    "sign_up_appointment": "Записаться",
+    "repeat": "Повторить",
+    "error": "Ошибка"
 }

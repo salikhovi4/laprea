@@ -45,7 +45,7 @@ class AppRouter extends RootStackRouter {
                   transitionsBuilder: TransitionsBuilders.fadeIn,
                   initial: true,
                 ),
-                AutoRoute(page: FavorListRoute.page),
+                AutoRoute(page: ServiceListRoute.page),
               ],
             ),
             CustomRoute(
@@ -60,7 +60,7 @@ class AppRouter extends RootStackRouter {
                   transitionsBuilder: TransitionsBuilders.fadeIn,
                 ),
                 AutoRoute(page: SelectFavorCategoryRoute.page),
-                AutoRoute(page: SelectFavorRoute.page),
+                AutoRoute(page: ServiceListRoute.page),
                 AutoRoute(page: SelectSpecialistCategoryRoute.page),
                 AutoRoute(page: SelectSpecialistRoute.page),
                 AutoRoute(page: SelectDateRoute.page),

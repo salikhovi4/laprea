@@ -1,35 +1,36 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:laprea/feature/favors/presentation/main/favors_main_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:laprea/feature/favors/data/favors_rep.dart';
+import 'package:laprea/feature/favors/data/models/service_data.dart';
 import 'package:laprea/feature/favors/widgets/favor/favor_item.dart';
 import 'package:laprea/generated/localization/l10n.dart';
 import 'package:laprea/ui_kit/ui_kit.dart';
 import 'package:laprea/ui_kit/widget/search_input.dart';
 
 @RoutePage()
-class FavorListPage extends StatefulWidget {
-  const FavorListPage({super.key, required this.title});
+class ServiceListPage extends StatefulWidget {
+  const ServiceListPage({super.key, required this.title, required this.list});
 
   final String title;
+  final List<ServiceData> list;
 
   @override
-  State<FavorListPage> createState() => _FavorListPageState();
+  State<ServiceListPage> createState() => _ServiceListPageState();
 }
 
-class _FavorListPageState extends State<FavorListPage> {
+class _ServiceListPageState extends State<ServiceListPage> {
   var _query = '';
 
   @override
   Widget build(BuildContext context) {
     final favors =
-    _query.isEmpty
-        ? FavorRep().fetchFavors()
-        : FavorRep().searchFavors(_query);
+        _query.isEmpty
+            ? widget.list
+            : context.read<FavorsRep>().searched(_query);
     return SafeArea(
       child: Scaffold(
-        appBar: UiAppBar(
-          title: '${S.of(context).favor}(${widget.title})',
-        ),
+        appBar: UiAppBar(title: '${S.of(context).favor}(${widget.title})'),
         body: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(

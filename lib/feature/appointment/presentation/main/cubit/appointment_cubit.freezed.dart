@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AppointmentState {
 
- SpecialistData? get selectedSpecialist; FavorData? get selectedFavor; DateTime? get selectedDateTime;
+ SpecialistData? get selectedSpecialist; ServiceData? get selectedService; DateTime? get selectedDateTime;
 /// Create a copy of AppointmentState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -26,16 +26,16 @@ $AppointmentStateCopyWith<AppointmentState> get copyWith => _$AppointmentStateCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AppointmentState&&(identical(other.selectedSpecialist, selectedSpecialist) || other.selectedSpecialist == selectedSpecialist)&&(identical(other.selectedFavor, selectedFavor) || other.selectedFavor == selectedFavor)&&(identical(other.selectedDateTime, selectedDateTime) || other.selectedDateTime == selectedDateTime));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AppointmentState&&(identical(other.selectedSpecialist, selectedSpecialist) || other.selectedSpecialist == selectedSpecialist)&&(identical(other.selectedService, selectedService) || other.selectedService == selectedService)&&(identical(other.selectedDateTime, selectedDateTime) || other.selectedDateTime == selectedDateTime));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,selectedSpecialist,selectedFavor,selectedDateTime);
+int get hashCode => Object.hash(runtimeType,selectedSpecialist,selectedService,selectedDateTime);
 
 @override
 String toString() {
-  return 'AppointmentState(selectedSpecialist: $selectedSpecialist, selectedFavor: $selectedFavor, selectedDateTime: $selectedDateTime)';
+  return 'AppointmentState(selectedSpecialist: $selectedSpecialist, selectedService: $selectedService, selectedDateTime: $selectedDateTime)';
 }
 
 
@@ -46,7 +46,7 @@ abstract mixin class $AppointmentStateCopyWith<$Res>  {
   factory $AppointmentStateCopyWith(AppointmentState value, $Res Function(AppointmentState) _then) = _$AppointmentStateCopyWithImpl;
 @useResult
 $Res call({
- FavorData? selectedFavor, SpecialistData? selectedSpecialist, DateTime? selectedDateTime
+ ServiceData? selectedService, SpecialistData? selectedSpecialist, DateTime? selectedDateTime
 });
 
 
@@ -63,10 +63,10 @@ class _$AppointmentStateCopyWithImpl<$Res>
 
 /// Create a copy of AppointmentState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? selectedFavor = freezed,Object? selectedSpecialist = freezed,Object? selectedDateTime = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? selectedService = freezed,Object? selectedSpecialist = freezed,Object? selectedDateTime = freezed,}) {
   return _then(AppointmentState(
-selectedFavor: freezed == selectedFavor ? _self.selectedFavor : selectedFavor // ignore: cast_nullable_to_non_nullable
-as FavorData?,selectedSpecialist: freezed == selectedSpecialist ? _self.selectedSpecialist : selectedSpecialist // ignore: cast_nullable_to_non_nullable
+selectedService: freezed == selectedService ? _self.selectedService : selectedService // ignore: cast_nullable_to_non_nullable
+as ServiceData?,selectedSpecialist: freezed == selectedSpecialist ? _self.selectedSpecialist : selectedSpecialist // ignore: cast_nullable_to_non_nullable
 as SpecialistData?,selectedDateTime: freezed == selectedDateTime ? _self.selectedDateTime : selectedDateTime // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));

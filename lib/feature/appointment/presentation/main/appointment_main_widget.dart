@@ -34,7 +34,7 @@ class AppointmentMainWidget extends StatelessWidget {
                       trailText: '1.',
                       title: S.of(context).select_favor,
                       button:
-                          state.selectedFavor != null
+                          state.selectedService != null
                               ? EditButton(
                                 onTap: () {
                                   context.pushRoute(
@@ -50,12 +50,12 @@ class AppointmentMainWidget extends StatelessWidget {
                                 },
                               ),
                     ),
-                    if (state.selectedFavor != null)
+                    if (state.selectedService != null)
                       SelectedItem(
-                        image: state.selectedFavor!.image,
-                        text: state.selectedFavor!.name,
+                        image: null,
+                        text: state.selectedService!.serviceName,
                         info: Text(
-                          state.selectedFavor!.duration,
+                          state.selectedService!.durationStr(),
                           style: context.textBaseRegular().copyWith(
                             color: UiColors.stoneGray,
                           ),
